@@ -42,19 +42,21 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-30 p-20 text-left bg-[#0b0f2a] px-5 md:px-20 text-white">
-      <h2 className="text-4xl md:text-5xl font-light mb-10 text-white">What Our Customers Say</h2>
-      <div className="flex flex-col md:flex-row justify-center gap-10 max-w-6xl mx-auto px-4">
+    <section className="py-16 px-6 sm:px-8 md:px-20 bg-[#0b0f2a] text-white">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-12 text-center">
+        What Our Customers Say
+      </h2>
+      <div className="flex flex-col md:flex-row gap-8 md:gap-10 max-w-6xl mx-auto">
         {testimonials.map((t, i) => (
           <div
             key={i}
             ref={(el) => (refs.current[i] = el)}
-            className="bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-lg p-8 rounded-2xl transition hover:shadow-xl w-full md:w-1/2"
+            className="bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-lg p-6 sm:p-8 rounded-2xl transition hover:shadow-xl w-full"
           >
-            <p className="text-lg text-white italic leading-relaxed">“{t.quote}”</p>
+            <p className="text-base sm:text-lg italic leading-relaxed">“{t.quote}”</p>
             <div className="mt-6">
-              <p className="font-semibold text-white text-base">{t.name}</p>
-              <p className="text-sm text-gray-500">{t.role}, {t.company}</p>
+              <p className="font-semibold text-white">{t.name}</p>
+              <p className="text-sm text-gray-400">{t.role}, {t.company}</p>
             </div>
           </div>
         ))}

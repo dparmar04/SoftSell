@@ -35,13 +35,20 @@ const HowItWorks = () => {
 
   return (
 
-    <section className="p-20 py-40 font-montserrat text-left bg-gradient-to-br from-[#1a2a6c] via-[#b21f1f] to-[#fdbb2d] bg-[length:400%_400%] backdrop-blur-md text-white">
-      <h2 className="text-4xl md:text-5xl font-light mb-8 text-white">How It Works: 3 Easy Steps</h2>
-      <div className="flex flex-col md:flex-row justify-center gap-10">
+    <section className="px-4 sm:px-10 py-20 md:py-32 font-montserrat text-white bg-gradient-to-br from-[#1a2a6c] via-[#b21f1f] to-[#fdbb2d] bg-[length:400%_400%] backdrop-blur-md">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-12 text-center">
+        How It Works: 3 Easy Steps
+      </h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {steps.map((step, i) => (
-          <div key={i} ref={(el) => (cardsRef.current[i] = el)} className="w-11/12 max-w-5xl py-10 rounded-2xl text-center">
-            <h3 className="text-xl font-semibold mb-4 text-left">{step.title}</h3>
-            <div className="text-md text-left">{step.desc}</div>
+          <div
+            key={i}
+            ref={(el) => (cardsRef.current[i] = el)}
+            className="bg-[#48345e5b] bg-opacity-10 backdrop-blur-sm p-6 rounded-2xl shadow-md text-left transition-transform duration-300 hover:scale-105"
+          >
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3">{step.title}</h3>
+            <p className="text-sm sm:text-base">{step.desc}</p>
           </div>
         ))}
       </div>
